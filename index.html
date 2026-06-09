@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ahmad Rafie - Junior System Administrator | Linux Administration, Cloud Computing, IT Infrastructure, IT Support" />
+  <meta name="keywords" content="System Administrator, Linux, Cloud Computing, IT Infrastructure, IT Support, Docker, AWS, MikroTik" />
+  <meta name="author" content="Ahmad Rafie" />
+  <meta property="og:title" content="Ahmad Rafie | Junior System Administrator" />
+  <meta property="og:description" content="Portfolio Ahmad Rafie - Junior System Administrator" />
+  <title>Ahmad Rafie | Junior System Administrator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- LOADING SCREEN -->
+<div id="loader" class="loader">
+  <div class="loader-content">
+    <div class="loader-logo">
+      <span class="loader-bracket">[</span>
+      <span class="loader-text">AR</span>
+      <span class="loader-bracket">]</span>
+    </div>
+    <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+    <div class="loader-status" id="loaderStatus">Initializing System...</div>
+  </div>
+</div>
+
+<!-- PARTICLE CANVAS -->
+<canvas id="particles"></canvas>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="#home" class="nav-logo">
+      <span class="logo-bracket">[</span><span class="logo-name">AR</span><span class="logo-bracket">]</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" class="nav-link active">Home</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#experience" class="nav-link">Experience</a></li>
+      <li><a href="#certificates" class="nav-link">Certificates</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" title="Switch theme">
+      <span class="theme-icon dark-icon"><i class="fas fa-moon"></i></span>
+      <span class="theme-icon light-icon"><i class="fas fa-sun"></i></span>
+      <span class="theme-label dark-label">Dark</span>
+      <span class="theme-label light-label">Light</span>
+    </button>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO SECTION -->
+<section id="home" class="hero">
+  <div class="hero-container">
+    <div class="hero-content" data-reveal>
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        <span>Available for Opportunities</span>
+      </div>
+      <h1 class="hero-title">
+        <span class="hero-greeting">Hello, I'm</span>
+        <span class="hero-name">Ahmad Rafie</span>
+      </h1>
+      <div class="hero-role">
+        <span class="role-prefix">$ whoami &rarr; </span>
+        <span class="typing-text" id="typingText"></span><span class="cursor">|</span>
+      </div>
+      <p class="hero-desc">
+        Saya adalah siswa TJKT yang berfokus pada <strong>Linux Administration</strong>, 
+        <strong>Server Management</strong>, <strong>Cloud Computing</strong>, 
+        <strong>Monitoring System</strong>, dan <strong>Infrastruktur IT Modern</strong>. 
+        Membangun, mengelola, dan mengoptimalkan sistem agar berjalan stabil, aman, dan efisien.
+      </p>
+      <div class="hero-tags">
+        <span class="hero-tag"><i class="fab fa-linux"></i> Linux</span>
+        <span class="hero-tag"><i class="fab fa-docker"></i> Docker</span>
+        <span class="hero-tag"><i class="fab fa-aws"></i> AWS</span>
+        <span class="hero-tag"><i class="fas fa-network-wired"></i> Network</span>
+      </div>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary"><i class="fas fa-folder-open"></i> View Projects</a>
+        <a href="cv-ahmadrafie.pdf.pdf" class="btn btn-outline" target="_blank"><i class="fas fa-file-pdf"></i> View CV</a>
+        <a href="#contact" class="btn btn-ghost"><i class="fas fa-envelope"></i> Contact Me</a>
+      </div>
+    </div>
+    <div class="hero-visual" data-reveal>
+      <div class="hero-photo-wrap">
+        <div class="photo-ring ring-1"></div>
+        <div class="photo-ring ring-2"></div>
+        <div class="photo-ring ring-3"></div>
+        <div class="hero-photo" id="heroPhoto">
+          <img src="foto.jpg" alt="Ahmad Rafie - Junior System Administrator"
+            onload="this.style.opacity='1'; document.getElementById('photoPlaceholder').style.display='none';"
+            onerror="this.style.display='none'; document.getElementById('photoPlaceholder').style.display='flex';"
+            style="opacity:0; transition: opacity 0.5s ease;"
+          />
+          <div class="photo-placeholder" id="photoPlaceholder" style="display:none;"><i class="fas fa-user-tie"></i></div>
+        </div>
+        <div class="photo-badge badge-linux"><i class="fab fa-linux"></i></div>
+        <div class="photo-badge badge-cloud"><i class="fas fa-cloud"></i></div>
+        <div class="photo-badge badge-docker"><i class="fab fa-docker"></i></div>
+        <div class="photo-badge badge-server"><i class="fas fa-server"></i></div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span>Scroll Down</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ABOUT SECTION -->
+<section id="about" class="about section">
+  <div class="container">
+    <div class="section-header" data-reveal>
+      <span class="section-label">// 01. about_me</span>
+      <h2 class="section-title">About Me</h2>
+      <p class="section-subtitle">Who I am and what I do</p>
+    </div>
+    <div class="about-grid">
+      <div class="about-text" data-reveal>
+        <p>Saya merupakan siswa <strong>SMK Wikrama Bogor</strong> jurusan <strong></strong>Teknik Jaringan Komputer dan Telekomunikasi (TJKT)</strong> yang memiliki minat besar pada bidang <strong>System Administration</strong>, Linux Server, Cloud Computing, dan Infrastruktur Teknologi Informasi.</p>
+        <p>Saya terbiasa melakukan instalasi dan konfigurasi server Linux, manajemen user dan permission, deployment web server, virtualisasi, monitoring sistem, konfigurasi jaringan dasar, serta troubleshooting perangkat komputer dan jaringan.</p>
+        <p>Saat ini saya aktif mengembangkan kemampuan melalui praktik langsung menggunakan <strong>Debian Linux</strong>, <strong>Ubuntu Server</strong>, <strong>Docker</strong>, <strong>VMware</strong>, <strong>AWS Cloud</strong>, <strong>MikroTik</strong>, <strong>Nginx</strong>, <strong>Grafana</strong>, dan berbagai tools administrasi sistem lainnya.</p>
+        <p>Saya memiliki semangat belajar yang tinggi, kemampuan problem solving yang baik, dan selalu berusaha mengikuti perkembangan teknologi yang digunakan dalam industri IT modern.</p>
+        <div class="about-info-grid">
+          <div class="info-item"><span class="info-label">Name</span><span class="info-value">Ahmad Rafie</span></div>
+          <div class="info-item"><span class="info-label">Role</span><span class="info-value">Junior Sysadmin</span></div>
+          <div class="info-item"><span class="info-label">School</span><span class="info-value">SMK Wikrama Bogor</span></div>
+          <div class="info-item"><span class="info-label">Major</span><span class="info-value">TJKT</span></div>
+          <div class="info-item"><span class="info-label">Status</span><span class="info-value">Open to Work</span></div>
+        </div>
+      </div>
+      <div class="about-stats" data-reveal>
+        <div class="stat-card" data-target="10">
+          <div class="stat-icon"><i class="fas fa-server"></i></div>
+          <div class="stat-number"><span class="counter">0</span>+</div>
+          <div class="stat-label">Infrastructure Projects</div>
+        </div>
+        <div class="stat-card" data-target="15">
+          <div class="stat-icon"><i class="fab fa-linux"></i></div>
+          <div class="stat-number"><span class="counter">0</span>+</div>
+          <div class="stat-label">Linux Labs</div>
+        </div>
+        <div class="stat-card" data-target="8">
+          <div class="stat-icon"><i class="fas fa-cloud"></i></div>
+          <div class="stat-number"><span class="counter">0</span>+</div>
+          <div class="stat-label">Cloud Deployments</div>
+        </div>
+        <div class="stat-card" data-target="20">
+          <div class="stat-icon"><i class="fas fa-code"></i></div>
+          <div class="stat-number"><span class="counter">0</span>+</div>
+          <div class="stat-label">Technologies Learned</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS SECTION -->
+<section id="skills" class="skills section">
+  <div class="container">
+    <div class="section-header" data-reveal>
+      <span class="section-label">// 02. technical_skills</span>
+      <h2 class="section-title">Technical Skills</h2>
+      <p class="section-subtitle">Tools & technologies I work with</p>
+    </div>
+    <div class="skills-tabs" data-reveal>
+      <button class="tab-btn active" data-tab="sysadmin">System Admin</button>
+      <button class="tab-btn" data-tab="webserver">Web Server</button>
+      <button class="tab-btn" data-tab="cloud">Cloud & Virt</button>
+      <button class="tab-btn" data-tab="networking">Networking</button>
+      <button class="tab-btn" data-tab="support">IT Support</button>
+    </div>
+    <div class="skills-content" id="skillsContent">
+      <!-- System Admin Tab -->
+      <div class="tab-pane active" id="tab-sysadmin">
+        <div class="skills-grid">
+          <div class="skill-card" data-reveal>
+            <div class="skill-icon"><i class="fab fa-linux"></i></div>
+            <div class="skill-info">
+              <div class="skill-header"><span class="skill-name">Debian Linux</span><span class="skill-pct">85%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+            </div>
+          </div>
+          <div class="skill-card" data-reveal>
+            <div class="skill-icon"><i class="fab fa-ubuntu"></i></div>
+            <div class="skill-info">
+              <div class="skill-header"><span class="skill-name">Ubuntu Server</span><span class="skill-pct">80%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+            </div>
+          </div>
+          <div class="skill-card" data-reveal>
+            <div class="skill-icon"><i class="fas fa-terminal"></i></div>
+            <div class="skill-info">
+              <div class="skill-header"><span class="skill-name">SSH Management</span><span class="skill-pct">90%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+            </div>
+          </div>
+          <div class="skill-card" data-reveal>
+            <div class="skill-icon"><i class="fas fa-users-cog"></i></div>
+            <div class="skill-info">
+              <div class="skill-header"><span class="skill-name">User & Permission Mgmt</span><span class="skill-pct">82%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="82"></div></div>
+            </div>
+          </div>
+          <div class="skill-card" data-reveal>
+            <div class="skill-icon"><i class="fas fa-cogs"></i></div>
+            <div class="skill-info">
+              <div class="skill-header"><span class="skill-name">Service Management</span><span class="skill-pct">78%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="78"></div></div>
+            </div>
+          </div>
+          <div class="skill-card" data-reveal>
+            <div class="skill-icon"><i class="fas fa-shield-alt"></i></div>
+            <div class="skill-info">
+              <div class="skill-header"><span class="skill-name">UFW Firewall</span><span class="skill-pct">75%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Web Server Tab -->
+      <div class="tab-pane" id="tab-webserver">
+        <div class="skills-grid">
+          <div class="skill-card" data-reveal>
+            <div class="skill-icon"><i class="fas fa-globe"></i></div>
+            <div class="skill-info">
+              <div class="skill-header"><span class="skill-name">Nginx</span><span class="skill-pct">85%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+            </div>
+          </div>
+          <div class="skill-card" data-reveal>
+            <div class="skill-icon"><i class="fab fa-apache"></i></div>
+            <div class="skill-info">
+              <div class="skill-header"><span class="skill-name">Apache</span><span class="skill-pct">75%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+            </div>
+          </div>
+          <div class="skill-card" data-reveal>
+            <div class="skill-icon"><i class="fas fa-sitemap"></i></div>
+            <div class="skill-info">
+              <div class="skill-header"><span class="skill-name">Virtual Host</span><span class="skill-pct">80%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+            </div>
+          </div>
+          <div class="skill-card" data-reveal>
+            <div class="skill-icon"><i class="fas fa-lock"></i></div>
+            <div class="skill-info">
+              <div class="skill-header"><span class="skill-name">SSL Configuration</span><span class="skill-pct">78%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="78"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Cloud & Virt Tab -->
+      <div class="tab-pane" id="tab-cloud">
+        <div class="skills-grid">
+          <div class="skill-card" data-reveal>
+            <div class="skill-icon"><i class="fab fa-aws"></i></div>
+            <div class="skill-info">
+              <div class="skill-header"><span class="skill-name">AWS EC2</span><span class="skill-pct">75%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+            </div>
+          </div>
+          <div class="skill-card" data-reveal>
+            <div class="skill-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+            <div class="skill-info">
+              <div class="skill-header"><span class="skill-name">AWS S3 & IAM</span><span class="skill-pct">70%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="70"></div></div>
+            </div>
+          </div>
+          <div class="skill-card" data-reveal>
+            <div class="skill-icon"><i class="fab fa-docker"></i></div>
+            <div class="skill-info">
+              <div class="skill-header"><span class="skill-name">Docker</span><span class="skill-pct">82%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="82"></div></div>
+            </div>
+          </div>
+          <div class="skill-card" data-reveal>
+            <div class="skill-icon"><i class="fas fa-layer-group"></i></div>
+            <div class="skill-info">
+              <div class="skill-header"><span class="skill-name">Docker Compose</span><span class="skill-pct">78%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="78"></div></div>
+            </div>
+          </div>
+          <div class="skill-card" data-reveal>
+            <div class="skill-icon"><i class="fas fa-desktop"></i></div>
+            <div class="skill-info">
+              <div class="skill-header"><span class="skill-name">VMware / VirtualBox</span><span class="skill-pct">80%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Networking Tab -->
+      <div class="tab-pane" id="tab-networking">
+        <div class="skills-grid">
+          <div class="skill-card" data-reveal>
+            <div class="skill-icon"><i class="fas fa-router"></i></div>
+            <div class="skill-info">
+              <div class="skill-header"><span class="skill-name">MikroTik RouterOS</span><span class="skill-pct">80%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+            </div>
+          </div>
+          <div class="skill-card" data-reveal>
+            <div class="skill-icon"><i class="fas fa-network-wired"></i></div>
+            <div class="skill-info">
+              <div class="skill-header"><span class="skill-name">TCP/IP & DNS & DHCP</span><span class="skill-pct">85%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+            </div>
+          </div>
+          <div class="skill-card" data-reveal>
+            <div class="skill-icon"><i class="fas fa-fire-alt"></i></div>
+            <div class="skill-info">
+              <div class="skill-header"><span class="skill-name">Firewall & NAT</span><span class="skill-pct">78%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="78"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- IT Support Tab -->
+      <div class="tab-pane" id="tab-support">
+        <div class="skills-grid">
+          <div class="skill-card" data-reveal>
+            <div class="skill-icon"><i class="fas fa-tools"></i></div>
+            <div class="skill-info">
+              <div class="skill-header"><span class="skill-name">Hardware Troubleshooting</span><span class="skill-pct">88%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="88"></div></div>
+            </div>
+          </div>
+          <div class="skill-card" data-reveal>
+            <div class="skill-icon"><i class="fab fa-windows"></i></div>
+            <div class="skill-info">
+              <div class="skill-header"><span class="skill-name">Software Troubleshooting</span><span class="skill-pct">85%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+            </div>
+          </div>
+          <div class="skill-card" data-reveal>
+            <div class="skill-icon"><i class="fas fa-print"></i></div>
+            <div class="skill-info">
+              <div class="skill-header"><span class="skill-name">Printer Support</span><span class="skill-pct">82%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="82"></div></div>
+            </div>
+          </div>
+          <div class="skill-card" data-reveal>
+            <div class="skill-icon"><i class="fas fa-wifi"></i></div>
+            <div class="skill-info">
+              <div class="skill-header"><span class="skill-name">Network Troubleshooting</span><span class="skill-pct">83%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="83"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS SECTION -->
+<section id="projects" class="projects section">
+  <div class="container">
+    <div class="section-header" data-reveal>
+      <span class="section-label">// 03. featured_projects</span>
+      <h2 class="section-title">Featured Projects</h2>
+      <p class="section-subtitle">Hands-on infrastructure work and documentation</p>
+    </div>
+    <div class="projects-grid">
+
+      <!-- Project 01 -->
+      <div class="project-card" data-reveal>
+        <div class="project-img">
+          <div class="project-img-placeholder p1">
+            <i class="fab fa-linux"></i>
+            <span>Web Server</span>
+          </div>
+          <div class="project-overlay">
+            <div class="project-links">
+              <a href="#" class="proj-link" title="GitHub"><i class="fab fa-github"></i></a>
+              <a href="#" class="proj-link" title="Documentation"><i class="fas fa-file-alt"></i></a>
+            </div>
+          </div>
+          <div class="project-number">01</div>
+        </div>
+        <div class="project-body">
+          <div class="project-category">Linux · Web Server</div>
+          <h3 class="project-title">Linux Web Server Deployment</h3>
+          <p class="project-desc">Membangun dan mengelola web server menggunakan Debian Linux dan Nginx dengan konfigurasi virtual host, SSL, SSH management, serta firewall dasar.</p>
+          <div class="project-features">
+            <span class="feature-tag"><i class="fas fa-check"></i> Nginx Config</span>
+            <span class="feature-tag"><i class="fas fa-check"></i> Virtual Host</span>
+            <span class="feature-tag"><i class="fas fa-check"></i> SSL</span>
+            <span class="feature-tag"><i class="fas fa-check"></i> UFW Firewall</span>
+          </div>
+          <div class="project-tech">
+            <span class="tech-badge">Debian Linux</span>
+            <span class="tech-badge">Nginx</span>
+            <span class="tech-badge">SSH</span>
+            <span class="tech-badge">UFW</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 02 -->
+      <div class="project-card" data-reveal>
+        <div class="project-img">
+          <div class="project-img-placeholder p2">
+            <i class="fab fa-docker"></i>
+            <span>Container Infra</span>
+          </div>
+          <div class="project-overlay">
+            <div class="project-links">
+              <a href="#" class="proj-link" title="GitHub"><i class="fab fa-github"></i></a>
+              <a href="#" class="proj-link" title="Documentation"><i class="fas fa-file-alt"></i></a>
+            </div>
+          </div>
+          <div class="project-number">02</div>
+        </div>
+        <div class="project-body">
+          <div class="project-category">Containerization</div>
+          <h3 class="project-title">Docker Container Infrastructure</h3>
+          <p class="project-desc">Membangun lingkungan container menggunakan Docker dan Docker Compose untuk mempermudah deployment aplikasi dan manajemen service.</p>
+          <div class="project-features">
+            <span class="feature-tag"><i class="fas fa-check"></i> Container Deploy</span>
+            <span class="feature-tag"><i class="fas fa-check"></i> Docker Compose</span>
+            <span class="feature-tag"><i class="fas fa-check"></i> Persistent Volume</span>
+            <span class="feature-tag"><i class="fas fa-check"></i> Image Management</span>
+          </div>
+          <div class="project-tech">
+            <span class="tech-badge">Docker</span>
+            <span class="tech-badge">Docker Compose</span>
+            <span class="tech-badge">Linux</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 03 -->
+      <div class="project-card featured-card" data-reveal>
+        <div class="project-img">
+          <div class="project-img-placeholder p3">
+            <i class="fab fa-aws"></i>
+            <span>Cloud Server</span>
+          </div>
+          <div class="project-overlay">
+            <div class="project-links">
+              <a href="#" class="proj-link" title="GitHub"><i class="fab fa-github"></i></a>
+              <a href="#" class="proj-link" title="Documentation"><i class="fas fa-file-alt"></i></a>
+            </div>
+          </div>
+          <div class="project-number">03</div>
+          <div class="project-badge-featured">Featured</div>
+        </div>
+        <div class="project-body">
+          <div class="project-category">Cloud Computing</div>
+          <h3 class="project-title">AWS Cloud Server Management</h3>
+          <p class="project-desc">Deploy dan mengelola infrastruktur cloud menggunakan <strong>AWS EC2</strong>. Project ini mencakup pembuatan instance EC2 dengan AMI Linux, konfigurasi Security Group untuk mengatur akses port, remote administration via SSH menggunakan key pair, setup IAM user dan permission, serta manajemen storage dengan EBS. Server berhasil diakses dan dikelola dari jarak jauh secara aman.</p>
+          <div class="project-features">
+            <span class="feature-tag"><i class="fas fa-check"></i> EC2 Instance Setup</span>
+            <span class="feature-tag"><i class="fas fa-check"></i> Security Group</span>
+            <span class="feature-tag"><i class="fas fa-check"></i> SSH Key Pair</span>
+            <span class="feature-tag"><i class="fas fa-check"></i> IAM User & Role</span>
+            <span class="feature-tag"><i class="fas fa-check"></i> EBS Storage</span>
+            <span class="feature-tag"><i class="fas fa-check"></i> Remote Admin</span>
+          </div>
+          <div class="project-tech">
+            <span class="tech-badge">AWS EC2</span>
+            <span class="tech-badge">IAM</span>
+            <span class="tech-badge">EBS</span>
+            <span class="tech-badge">Linux</span>
+            <span class="tech-badge">SSH</span>
+          </div>
+          <div class="project-doc-btn">
+            <a href="https://drive.google.com/drive/folders/1m6kdudiMSuHK3CcCuXz-F2EkPPfkMy57" target="_blank" class="btn-doc"><i class="fab fa-google-drive"></i> Lihat di Google Drive</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 04 -->
+      <div class="project-card" data-reveal>
+        <div class="project-img">
+          <div class="project-img-placeholder p4">
+            <i class="fas fa-chart-line"></i>
+            <span>Monitoring</span>
+          </div>
+          <div class="project-overlay">
+            <div class="project-links">
+              <a href="#" class="proj-link" title="GitHub"><i class="fab fa-github"></i></a>
+              <a href="#" class="proj-link" title="Documentation"><i class="fas fa-file-alt"></i></a>
+            </div>
+          </div>
+          <div class="project-number">04</div>
+        </div>
+        <div class="project-body">
+          <div class="project-category">Monitoring</div>
+          <h3 class="project-title">Server Monitoring Dashboard</h3>
+          <p class="project-desc">Monitoring resource server untuk memastikan performa dan stabilitas sistem berjalan optimal menggunakan Grafana dashboard.</p>
+          <div class="project-features">
+            <span class="feature-tag"><i class="fas fa-check"></i> CPU Monitoring</span>
+            <span class="feature-tag"><i class="fas fa-check"></i> RAM Monitoring</span>
+            <span class="feature-tag"><i class="fas fa-check"></i> Disk Monitoring</span>
+            <span class="feature-tag"><i class="fas fa-check"></i> Service Monitor</span>
+          </div>
+          <div class="project-tech">
+            <span class="tech-badge">Grafana</span>
+            <span class="tech-badge">Linux</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 05 -->
+      <div class="project-card" data-reveal>
+        <div class="project-img">
+          <div class="project-img-placeholder p5">
+            <i class="fas fa-network-wired"></i>
+            <span>Network Admin</span>
+          </div>
+          <div class="project-overlay">
+            <div class="project-links">
+              <a href="dokumentasi mikrotik + aws.docx" class="proj-link" title="Documentation" download><i class="fas fa-file-word"></i></a>
+            </div>
+          </div>
+          <div class="project-number">05</div>
+        </div>
+        <div class="project-body">
+          <div class="project-category">Networking</div>
+          <h3 class="project-title">MikroTik Network Administration</h3>
+          <p class="project-desc">Melakukan konfigurasi dan administrasi jaringan menggunakan <strong>MikroTik RouterOS</strong> secara menyeluruh. Project ini mencakup setup DHCP Server untuk manajemen IP otomatis, konfigurasi NAT agar client dapat mengakses internet, pengaturan Firewall untuk keamanan jaringan, static dan dynamic routing, serta monitoring traffic jaringan melalui Winbox. Seluruh konfigurasi didokumentasikan sebagai referensi implementasi jaringan nyata.</p>
+          <div class="project-features">
+            <span class="feature-tag"><i class="fas fa-check"></i> DHCP Server</span>
+            <span class="feature-tag"><i class="fas fa-check"></i> NAT & Masquerade</span>
+            <span class="feature-tag"><i class="fas fa-check"></i> Firewall Rules</span>
+            <span class="feature-tag"><i class="fas fa-check"></i> Static Routing</span>
+            <span class="feature-tag"><i class="fas fa-check"></i> Winbox Management</span>
+            <span class="feature-tag"><i class="fas fa-check"></i> Network Monitoring</span>
+          </div>
+          <div class="project-tech">
+            <span class="tech-badge">MikroTik</span>
+            <span class="tech-badge">RouterOS</span>
+            <span class="tech-badge">Winbox</span>
+            <span class="tech-badge">TCP/IP</span>
+            <span class="tech-badge">Firewall</span>
+          </div>
+          <div class="project-doc-btn">
+            <a href="https://drive.google.com/drive/folders/1m6kdudiMSuHK3CcCuXz-F2EkPPfkMy57" target="_blank" class="btn-doc"><i class="fab fa-google-drive"></i> Lihat di Google Drive</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 06 -->
+      <div class="project-card" data-reveal>
+        <div class="project-img">
+          <div class="project-img-placeholder p6">
+            <i class="fas fa-tools"></i>
+            <span>IT Support</span>
+          </div>
+          <div class="project-overlay">
+            <div class="project-links">
+              <a href="#" class="proj-link" title="GitHub"><i class="fab fa-github"></i></a>
+              <a href="#" class="proj-link" title="Documentation"><i class="fas fa-file-alt"></i></a>
+            </div>
+          </div>
+          <div class="project-number">06</div>
+        </div>
+        <div class="project-body">
+          <div class="project-category">IT Support</div>
+          <h3 class="project-title">IT Support & Troubleshooting Doc</h3>
+          <p class="project-desc">Dokumentasi troubleshooting perangkat komputer dan jaringan selama proses belajar dan praktik langsung di lapangan.</p>
+          <div class="project-features">
+            <span class="feature-tag"><i class="fas fa-check"></i> OS Installation</span>
+            <span class="feature-tag"><i class="fas fa-check"></i> Driver Install</span>
+            <span class="feature-tag"><i class="fas fa-check"></i> Printer Support</span>
+            <span class="feature-tag"><i class="fas fa-check"></i> HW Maintenance</span>
+          </div>
+          <div class="project-tech">
+            <span class="tech-badge">Windows</span>
+            <span class="tech-badge">Networking</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE SECTION -->
+<section id="experience" class="experience section">
+  <div class="container">
+    <div class="section-header" data-reveal>
+      <span class="section-label">// 04. experience</span>
+      <h2 class="section-title">Experience</h2>
+      <p class="section-subtitle">Hands-on field experience</p>
+    </div>
+    <div class="timeline" data-reveal>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <div>
+              <h3 class="timeline-role">IT Support & Infrastructure</h3>
+              <span class="timeline-company">PKL / Internship Program</span>
+            </div>
+            <span class="timeline-period">2024 – 2025</span>
+          </div>
+          <ul class="timeline-list">
+            <li><i class="fas fa-chevron-right"></i> Maintenance dan perawatan perangkat komputer</li>
+            <li><i class="fas fa-chevron-right"></i> Troubleshooting hardware dan software</li>
+            <li><i class="fas fa-chevron-right"></i> Konfigurasi jaringan dan instalasi sistem operasi</li>
+            <li><i class="fas fa-chevron-right"></i> Monitoring performa dan stabilitas sistem</li>
+            <li><i class="fas fa-chevron-right"></i> Dokumentasi aset dan perangkat IT</li>
+          </ul>
+          <div class="timeline-tags">
+            <span>IT Support</span><span>Network Config</span><span>OS Installation</span><span>Documentation</span>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <div>
+              <h3 class="timeline-role">Student – TJKT Program</h3>
+              <span class="timeline-company">SMK Teknik Jaringan Komputer & Telekomunikasi</span>
+            </div>
+            <span class="timeline-period">2022 – Present</span>
+          </div>
+          <ul class="timeline-list">
+            <li><i class="fas fa-chevron-right"></i> Linux Server Administration (Debian, Ubuntu)</li>
+            <li><i class="fas fa-chevron-right"></i> Virtualisasi menggunakan VMware & VirtualBox</li>
+            <li><i class="fas fa-chevron-right"></i> Container deployment dengan Docker</li>
+            <li><i class="fas fa-chevron-right"></i> Cloud computing dengan AWS</li>
+            <li><i class="fas fa-chevron-right"></i> Network administration dengan MikroTik</li>
+          </ul>
+          <div class="timeline-tags">
+            <span>Linux</span><span>Docker</span><span>AWS</span><span>MikroTik</span><span>Networking</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATES SECTION -->
+<section id="certificates" class="certificates section">
+  <div class="container">
+    <div class="section-header" data-reveal>
+      <span class="section-label">// 05. certifications</span>
+      <h2 class="section-title">Certificates</h2>
+      <p class="section-subtitle">Recognized achievements and credentials</p>
+    </div>
+    <div class="cert-filter" data-reveal>
+      <button class="cert-btn active" data-filter="all">All</button>
+      <button class="cert-btn" data-filter="linux">Linux</button>
+      <button class="cert-btn" data-filter="networking">Networking</button>
+      <button class="cert-btn" data-filter="cloud">Cloud</button>
+      <button class="cert-btn" data-filter="support">IT Support</button>
+      <button class="cert-btn" data-filter="sysadmin">Sysadmin</button>
+    </div>
+    <div class="cert-grid" id="certGrid">
+      <div class="cert-card" data-category="linux" data-reveal>
+        <div class="cert-icon"><i class="fab fa-linux"></i></div>
+        <div class="cert-body">
+          <h4>Linux Essentials</h4>
+          <p>Fundamental Linux administration and command line</p>
+          <span class="cert-category linux">Linux</span>
+          <div class="cert-actions">
+            <a href="sertificte rafie.pdf" target="_blank" class="cert-action-btn view"><i class="fas fa-eye"></i> View</a>
+            <a href="sertificte rafie.pdf" download class="cert-action-btn download"><i class="fas fa-download"></i> Download</a>
+          </div>
+        </div>
+        <div class="cert-hover-overlay"><i class="fas fa-expand-alt"></i></div>
+      </div>
+      <div class="cert-card" data-category="networking" data-reveal>
+        <div class="cert-icon"><i class="fas fa-network-wired"></i></div>
+        <div class="cert-body">
+          <h4>Network Administration</h4>
+          <p>MikroTik and TCP/IP networking fundamentals</p>
+          <span class="cert-category networking">Networking</span>
+        </div>
+        <div class="cert-hover-overlay"><i class="fas fa-expand-alt"></i></div>
+      </div>
+      <div class="cert-card" data-category="cloud" data-reveal>
+        <div class="cert-icon"><i class="fab fa-aws"></i></div>
+        <div class="cert-body">
+          <h4>AWS Cloud Practitioner</h4>
+          <p>Cloud fundamentals and AWS services</p>
+          <span class="cert-category cloud">Cloud</span>
+        </div>
+        <div class="cert-hover-overlay"><i class="fas fa-expand-alt"></i></div>
+      </div>
+      <div class="cert-card" data-category="support" data-reveal>
+        <div class="cert-icon"><i class="fas fa-headset"></i></div>
+        <div class="cert-body">
+          <h4>IT Support Professional</h4>
+          <p>Hardware, software, and help desk support</p>
+          <span class="cert-category support">IT Support</span>
+        </div>
+        <div class="cert-hover-overlay"><i class="fas fa-expand-alt"></i></div>
+      </div>
+      <div class="cert-card" data-category="sysadmin" data-reveal>
+        <div class="cert-icon"><i class="fas fa-server"></i></div>
+        <div class="cert-body">
+          <h4>System Administration</h4>
+          <p>Server management and infrastructure basics</p>
+          <span class="cert-category sysadmin">Sysadmin</span>
+        </div>
+        <div class="cert-hover-overlay"><i class="fas fa-expand-alt"></i></div>
+      </div>
+      <div class="cert-card" data-category="linux" data-reveal>
+        <div class="cert-icon"><i class="fab fa-docker"></i></div>
+        <div class="cert-body">
+          <h4>Docker & Containerization</h4>
+          <p>Container deployment and Docker ecosystem</p>
+          <span class="cert-category linux">Linux</span>
+        </div>
+        <div class="cert-hover-overlay"><i class="fas fa-expand-alt"></i></div>
+      </div>
+      <div class="cert-card" data-category="linux" data-reveal>
+        <div class="cert-icon"><i class="fab fa-linux"></i></div>
+        <div class="cert-body">
+          <h4>Linux Server Administration</h4>
+          <p>Server configuration and Linux system administration</p>
+          <span class="cert-category linux">Linux</span>
+          <div class="cert-actions">
+            <a href="sertificate rafie2.pdf" target="_blank" class="cert-action-btn view"><i class="fas fa-eye"></i> View</a>
+            <a href="sertificate rafie2.pdf" download class="cert-action-btn download"><i class="fas fa-download"></i> Download</a>
+          </div>
+        </div>
+        <div class="cert-hover-overlay"><i class="fas fa-expand-alt"></i></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contact" class="contact section">
+  <div class="container">
+    <div class="section-header" data-reveal>
+      <span class="section-label">// 06. contact</span>
+      <h2 class="section-title">Get In Touch</h2>
+      <p class="section-subtitle">Available for internship, freelance, and junior roles</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info" data-reveal>
+        <h3>Let's Connect</h3>
+        <p>Saya terbuka untuk peluang kerja sebagai <strong>Junior System Administrator</strong>, IT Support, atau posisi terkait IT Infrastructure. Jangan ragu untuk menghubungi saya.</p>
+        <div class="contact-channels">
+          <a href="mailto:ahmadrafie@email.com" class="contact-channel">
+            <div class="channel-icon"><i class="fas fa-envelope"></i></div>
+            <div class="channel-info">
+              <span class="channel-label">Email</span>
+              <span class="channel-value">ahmadrafie@email.com</span>
+            </div>
+            <i class="fas fa-arrow-right channel-arrow"></i>
+          </a>
+          <a href="https://wa.me/6281234567890" target="_blank" class="contact-channel">
+            <div class="channel-icon whatsapp"><i class="fab fa-whatsapp"></i></div>
+            <div class="channel-info">
+              <span class="channel-label">WhatsApp</span>
+              <span class="channel-value">+62 812-3456-7890</span>
+            </div>
+            <i class="fas fa-arrow-right channel-arrow"></i>
+          </a>
+          <a href="https://github.com/ahmadrafie" target="_blank" class="contact-channel">
+            <div class="channel-icon github"><i class="fab fa-github"></i></div>
+            <div class="channel-info">
+              <span class="channel-label">GitHub</span>
+              <span class="channel-value">github.com/ahmadrafie</span>
+            </div>
+            <i class="fas fa-arrow-right channel-arrow"></i>
+          </a>
+          <a href="https://linkedin.com/in/ahmadrafie" target="_blank" class="contact-channel">
+            <div class="channel-icon linkedin"><i class="fab fa-linkedin-in"></i></div>
+            <div class="channel-info">
+              <span class="channel-label">LinkedIn</span>
+              <span class="channel-value">linkedin.com/in/ahmadrafie</span>
+            </div>
+            <i class="fas fa-arrow-right channel-arrow"></i>
+          </a>
+        </div>
+      </div>
+      <div class="contact-form-wrap" data-reveal>
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Your Name" required />
+            <span class="form-error" id="nameError"></span>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" required />
+            <span class="form-error" id="emailError"></span>
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="Job Opportunity / Collaboration" required />
+            <span class="form-error" id="subjectError"></span>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Your message..." rows="5" required></textarea>
+            <span class="form-error" id="messageError"></span>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+          <div class="form-success" id="formSuccess">
+            <i class="fas fa-check-circle"></i> Message sent successfully!
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#home" class="footer-logo">
+          <span class="logo-bracket">[</span><span class="logo-name">AR</span><span class="logo-bracket">]</span>
+        </a>
+        <p class="footer-tagline">Building Reliable Systems and Infrastructure</p>
+      </div>
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-social">
+        <a href="mailto:ahmadrafie@email.com" class="social-btn" title="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://wa.me/6281234567890" target="_blank" class="social-btn" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://github.com/ahmadrafie" target="_blank" class="social-btn" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/ahmadrafie" target="_blank" class="social-btn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Ahmad Rafie. All rights reserved.</p>
+      <p class="footer-stack">Built with <span style="color:var(--accent)">♥</span> — Linux · Docker · AWS · MikroTik</p>
+    </div>
+  </div>
+  <button class="back-to-top" id="backToTop" title="Back to Top"><i class="fas fa-chevron-up"></i></button>
+</footer>
+
+<!-- PROJECT MODAL -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-box" id="modalBox">
+    <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
+    <div class="modal-header">
+      <div class="modal-icon" id="modalIcon"></div>
+      <div>
+        <div class="modal-category" id="modalCategory"></div>
+        <h2 class="modal-title" id="modalTitle"></h2>
+      </div>
+    </div>
+    <div class="modal-body">
+      <div class="modal-desc" id="modalDesc"></div>
+      <div class="modal-features" id="modalFeatures"></div>
+      <div class="modal-tech" id="modalTech"></div>
+      <div class="modal-actions" id="modalActions"></div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
